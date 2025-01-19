@@ -68,14 +68,14 @@ M.config = {
 				['<c-o>'] = cmp.mapping.complete(),
 				['<c-space>'] = cmp.mapping.complete(),
 				-- 代码片段下一处位置
-				["<c-e>"] = cmp.mapping(
+				["<c-h>"] = cmp.mapping(
 					function()
 						cmp_ultisnips_mappings.compose { "expand", "jump_forwards" } (function() end)
 					end,
 					{ "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
 				),
 				-- 代码片段上一处位置
-				["<c-n>"] = cmp.mapping(
+				["<c-l>"] = cmp.mapping(
 					function(fallback)
 						cmp_ultisnips_mappings.jump_backwards(fallback)
 					end,
@@ -104,6 +104,7 @@ M.config = {
 					c = function(fallback)
 						if cmp.visible() then
 							cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })
+							cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = false })
 						else
 							fallback()
 						end
@@ -135,6 +136,7 @@ M.config = {
 				{ name = 'path' },  -- 本地路径补全
 				{ name = 'nvim_lsp' },
 				{ name = 'ultisnips' }, -- For ultisnips users.
+				{ name = 'fittencode', group_index = 1 },
 			}, {
 				{ name = 'buffer' },
 			})

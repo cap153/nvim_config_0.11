@@ -146,6 +146,52 @@ mapkey("x", "<s-tab>", "<gv")
 mapkey("x", "<tab>", ">gv")
 
 -- ===
+-- === 批量替换
+-- ===
+
+-- 设置快捷键，替换所有文件内容
+mapcmd("<leader>sa", "lua search_and_replace()")
+-- 设置快捷键，替换当前文件内容
+mapcmd("<leader>sr", "lua search_and_replace_current_file()")
+
+-- 替换当前目录及子目录下所有文件内容
+function search_and_replace()
+  -- 获取用户输入的查找内容,使用 input() 函数动态输入替换内容
+  local search_text = vim.fn.input("Search for: ")
+
+  -- 获取用户输入的替换内容
+  local replace_text = vim.fn.input("Replace with: ")
+
+  -- 执行替换命令
+  if search_text ~= "" and replace_text ~= "" then
+    local cmd = 'execute "!grep -rl \\"' .. search_text .. '\\" ./ | xargs sed -i \\"s/' .. search_text .. '/' .. replace_text .. '/g\\""'
+    vim.cmd(cmd)
+    print("Replaced all occurrences of '" .. search_text .. "' with '" .. replace_text .. "'")
+  else
+    print("Search or replace text cannot be empty.")
+  end
+end
+
+-- 替换当前文件内容
+function search_and_replace_current_file()
+  -- 获取用户输入的查找内容
+  local search_text = vim.fn.input("Search for in current file: ")
+
+  -- 获取用户输入的替换内容
+  local replace_text = vim.fn.input("Replace with: ")
+
+  -- 执行替换命令
+  if search_text ~= "" and replace_text ~= "" then
+    -- 使用 sed 替换当前文件中的匹配内容，并正确转义引号
+    local cmd = string.format('!sed -i \'s/%s/%s/g\' %%', search_text, replace_text)
+    vim.cmd(cmd)
+    print("Replaced all occurrences of '" .. search_text .. "' with '" .. replace_text .. "' in current file.")
+  else
+    print("Search or replace text cannot be empty.")
+  end
+end
+
+-- ===
 -- === Other useful stuff
 -- ===
 
@@ -159,9 +205,8 @@ mapkey("", "<LEADER><LEADER>", "<Esc>/<++><CR>:nohlsearch<CR>c4l")
 mapcmd("<LEADER>sc", "set spell!")
 
 -- 运行代码
-
 vim.cmd([[
- au filetype dart noremap r :wall<cr>:term tmux a <cr>
+ au filetype dart noremap r :wall<cr>:Telescope flutter commands<cr>
  au filetype python noremap r :wall<cr>:set splitbelow<cr>:sp<cr>:term python %<cr>
  au filetype go noremap r :wall<cr>:set splitbelow<cr>:sp<cr>:term go run %<cr>
  au filetype markdown noremap r :MarkdownPreview<cr>

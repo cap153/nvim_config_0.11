@@ -1,0 +1,37 @@
+{
+	"sec": {
+		"prefix": "sec",
+		"body": [
+			"-- ===",
+			"-- === ${0}",
+			"-- ==="
+		],
+		"description": "Section comment"
+	},
+	"return": {
+		"prefix": "return",
+		"body": [
+			"return {",
+			"\t${1}",
+			"\tconfig = function()",
+			"\t\t${2}",
+			"\tend",
+			"}"
+		],
+		"description": "Return with config function"
+	},
+	"require_keymap": {
+		"prefix": "require_keymap",
+		"body": [
+			"local map = require(\"core.keymap\")"
+		],
+		"description": "Require keymap for Neovim"
+	},
+	"require_plugins": {
+		"prefix": "require_plugins",
+		"body": [
+			"require(\"lazy.plugins.${0}\")"
+		],
+		"description": "Require plugins for Neovim"
+	}
+}

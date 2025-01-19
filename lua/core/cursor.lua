@@ -6,7 +6,7 @@ if vim.g.neovide then
 	vim.o.guifont = "Source Code Pro:h16" -- text below applies for VimScript
 	vim.g.neovide_transparency = 0.75
 	-- 全屏，在i3和sway的配置中设置了并且速度更快
-	vim.g.neovide_fullscreen = true
+	-- vim.g.neovide_fullscreen = true
 end
 
 -- ===
