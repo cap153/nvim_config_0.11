@@ -56,8 +56,8 @@ return {
 				-- score_offset设置优先级数字越大优先级越高
 				buffer = { score_offset = 4 },
 				path = { score_offset = 3 },
-				snippets = { score_offset = 2 },
-				lsp = { score_offset = 1 },
+				lsp = { score_offset = 2 },
+				snippets = { score_offset = 1 },
 			}
 		},
 	},
