@@ -41,7 +41,7 @@ return {
 
 		appearance = {
 			-- 将后备高亮组设置为 nvim-cmp 的高亮组
-			-- 当您的主题不支持眨眼.cmp 时很有用
+			-- 当您的主题不支持blink.cmp 时很有用
 			-- 将在未来版本中删除
 			use_nvim_cmp_as_default = true,
 			-- 将“Nerd Font Mono”设置为“mono”，将“Nerd Font”设置为“normal”
