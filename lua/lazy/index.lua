@@ -83,12 +83,14 @@ require("lazy").setup({
 	require("lazy.plugins.suda"),
 	-- jump使用flash.nvim插件实现，f单个字母时按f下一处，建议先esc退出再可视模式此时才可以继续使用f，斜杠粘贴整个单词查找的时候不好用
 	require("lazy.plugins.jump"),
+	-- 多光标
+	require("lazy.plugins.multicursor"),
 	-- which-key使用多个字母快捷键停留时会提示
-	-- require("lazy.plugins.whichkey"),
+	require("lazy.plugins.whichkey"),
 	-- cw推荐的indent缩进线hlchunk，可以根据线条的款式来分辨缩进
 	-- require("lazy.plugins.indent"),
 	-- ai编程助手supermaven
 	-- require("lazy.plugins.supermaven"),
-	-- 自动补全插件
+	-- 自动补全插件nvim-cmp
 	-- require("lazy.plugins.autocomplete").config,
 })
