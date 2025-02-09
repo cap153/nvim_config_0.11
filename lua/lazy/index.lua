@@ -21,6 +21,8 @@ require("lazy").setup({
 	require("lazy.plugins.blinkcmp"),
 	-- lsp配置，全局的错误和警告提示，修复建议，重命名变量，格式化代码等等
 	require("lazy.plugins.lspconfig"),
+	-- 格式化代码
+	require("lazy.plugins.formatter"),
 	-- ai编程助手Fitten Code
 	require("lazy.plugins.fittencode"),
 	-- 免费大语言模型 (LLM) 支持
