@@ -6,10 +6,3 @@
 ```bash
 paru -S python-neovim python-pip npm
 ```
-
-markdown文件的图片预览可能需要安装如下包
-
-```bash
-paru -S lua51 imagemagick luarocks ueberzugpp
-sudo luarocks --lua-version=5.1 install magick
-```
