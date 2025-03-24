@@ -40,6 +40,8 @@ vim.o.mouse = 'a'
 vim.o.termguicolors = true
 -- 将updatetime设置为较低的值以提高性能
 vim.opt.updatetime = 200
+-- 指定keyword
+vim.opt.iskeyword = "_,49-57,A-Z,a-z"
 
 -- 设置编码格式
 vim.o.fileencodings = 'utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1'

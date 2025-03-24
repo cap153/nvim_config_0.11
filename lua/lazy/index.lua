@@ -17,7 +17,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 -- 启动Lazy插件管理快捷键
 vim.keymap.set("n", "<leader>l", ":Lazy<CR>", { noremap = true })
 require("lazy").setup({
-	-- cmp自动补全
+	-- 自动补全插件
 	require("lazy.plugins.blinkcmp"),
 	-- lsp配置，全局的错误和警告提示，修复建议，重命名变量，格式化代码等等
 	require("lazy.plugins.lspconfig"),
@@ -40,7 +40,7 @@ require("lazy").setup({
 	-- 粘贴图片
 	require("lazy.plugins.imgclip"),
 	-- 图片预览
-	require("lazy.plugins.image"),
+	require("lazy.plugins.snacks"),
 	-- 翻译插件gtranslate
 	require("lazy.plugins.translate"),
 	-- git状态
@@ -61,8 +61,6 @@ require("lazy").setup({
 	require("lazy.plugins.flutter"),
 	-- 用于改进在 Neovim 中查看 Markdown 文件的插件
 	require("lazy.plugins.render-markdown"),
-	-- markdown preview
-	require("lazy.plugins.markdownpreview"),
 	-- 底部状态栏+主题 themes
 	require("lazy.plugins.themes"),
 	-- 注释插件
@@ -71,8 +69,6 @@ require("lazy").setup({
 	require("lazy.plugins.bufferline"),
 	-- explorer tree 文件列表，现在已使用yazi
 	require("lazy.plugins.filemanager"),
-	-- minifiles也是文件管理器，功能较少
-	require("lazy.plugins.minifiles"),
 	-- crtl+g快捷键在neovim中启动lazygit
 	require("lazy.plugins.lazygit"),
 	-- telescope模糊查找
