@@ -2,6 +2,7 @@ return {
 	"saghen/blink.cmp",
 	dependencies = {
 		"rafamadriz/friendly-snippets",
+		"Kaiser-Yang/blink-cmp-avante",
 		"mikavilpas/blink-ripgrep.nvim",
 	},
 	version = "*",
@@ -14,8 +15,14 @@ return {
 				["<CR>"] = { "select_and_accept", "fallback" },
 			},
 			completion = {
-				-- 自动显示补全窗口
-				menu = { auto_show = true },
+				-- 自动显示补全窗口，仅在输入命令时显示菜单，而搜索或使用其他输入菜单时则不显示
+				menu = {
+					auto_show = function(ctx)
+						return vim.fn.getcmdtype() == ":"
+						-- enable for inputs as well, with:
+						-- or vim.fn.getcmdtype() == '@'
+					end,
+				},
 				-- 不在当前行上显示所选项目的预览
 				ghost_text = { enabled = false },
 			},
@@ -63,6 +70,7 @@ return {
 		-- 已定义启用的提供程序的默认列表，以便您可以扩展它
 		sources = {
 			default = {
+				"avante",
 				"buffer",
 				"ripgrep",
 				"lsp",
@@ -71,6 +79,11 @@ return {
 			},
 			providers = {
 				-- score_offset设置优先级数字越大优先级越高
+				avante = {
+					module = "blink-cmp-avante",
+					name = "Avante",
+					score_offset = 6,
+				},
 				buffer = { score_offset = 5 },
 				ripgrep = {
 					module = "blink-ripgrep",
@@ -80,6 +93,15 @@ return {
 				path = { score_offset = 3 },
 				lsp = { score_offset = 2 },
 				snippets = { score_offset = 1 },
+				cmdline = {
+					min_keyword_length = function(ctx)
+						-- when typing a command, only show when the keyword is 3 characters or longer
+						if ctx.mode == "cmdline" and string.find(ctx.line, " ") == nil then
+							return 3
+						end
+						return 0
+					end,
+				},
 			},
 		},
 	},

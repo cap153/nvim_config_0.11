@@ -17,6 +17,8 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 -- 启动Lazy插件管理快捷键
 vim.keymap.set("n", "<leader>l", ":Lazy<CR>", { noremap = true })
 require("lazy").setup({
+	-- 用Neovim打开kitty滚动缓冲
+	require("lazy.plugins.kittyscroll"),
 	-- 自动补全插件
 	require("lazy.plugins.blinkcmp"),
 	-- lsp配置，全局的错误和警告提示，修复建议，重命名变量，格式化代码等等
@@ -27,8 +29,6 @@ require("lazy").setup({
 	require("lazy.plugins.fittencode"),
 	-- 免费大语言模型 (LLM) 支持
 	require("lazy.plugins.llm"),
-	-- 顶部的winbar,可以鼠标点击
-	require("lazy.plugins.winbar"),
 	-- command line浮动弹窗
 	require("lazy.plugins.cmdline"),
 	-- 代码函数名称浏览时固定，`[c`可以跳转到上下文
@@ -59,8 +59,6 @@ require("lazy").setup({
 	require("lazy.plugins.pairs"),
 	-- flutter
 	require("lazy.plugins.flutter"),
-	-- 用于改进在 Neovim 中查看 Markdown 文件的插件
-	require("lazy.plugins.render-markdown"),
 	-- 底部状态栏+主题 themes
 	require("lazy.plugins.themes"),
 	-- 注释插件
@@ -85,10 +83,14 @@ require("lazy").setup({
 	require("lazy.plugins.multicursor"),
 	-- which-key使用多个字母快捷键停留时会提示
 	require("lazy.plugins.whichkey"),
+	-- 用于改进在 Neovim 中查看 Markdown 文件的插件
+	-- require("lazy.plugins.render-markdown"),
+	-- 顶部的winbar,可以鼠标点击
+	-- require("lazy.plugins.winbar"),
 	-- cw推荐的indent缩进线hlchunk，可以根据线条的款式来分辨缩进
 	-- require("lazy.plugins.indent"),
-	-- ai编程助手supermaven
-	-- require("lazy.plugins.supermaven"),
-	-- 自动补全插件nvim-cmp
-	-- require("lazy.plugins.autocomplete").config,
+	-- mcp server插件
+	-- require("lazy.plugins.mcphub"),
+	-- 像cursor一样使用neovim
+	-- require("lazy.plugins.avante"),
 })

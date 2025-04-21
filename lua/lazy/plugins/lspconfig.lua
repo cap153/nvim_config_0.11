@@ -19,9 +19,9 @@ return {
 		local servers = {
 			'marksman', -- 任意标题<space>aw打开code action可以开头生成目录；超链接可以链接到同一个git项目的其他markdown文件#指定标题<space>h可以预览
 			'lua_ls',
+			'rust_analyzer',
 			'pylsp', -- Mason对应的安装名称是python-lsp-server
 			-- 'gopls',
-			'rust_analyzer',
 		}
 		-- lsp_zero的相关配置
 		local lsp_zero = require('lsp-zero')
