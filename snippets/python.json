@@ -1,0 +1,18 @@
+
+{
+	"pri": {
+		"prefix": "pri",
+		"body": [
+			"print(${0})"
+		],
+		"description": "print()"
+	},
+	"main": {
+		"prefix": "main",
+		"body": [
+			"if __name__ == '__main__':",
+			"\t${0}"
+		],
+		"description": "if main"
+	}
+}

@@ -88,7 +88,7 @@ require("lazy").setup({
 	-- 顶部的winbar,可以鼠标点击
 	require("lazy.plugins.winbar"),
 	-- 用于改进在 Neovim 中查看 Markdown 文件的插件
-	require("lazy.plugins.markview"),
+	-- require("lazy.plugins.markview"),
 	-- require("lazy.plugins.render-markdown"),
 	-- mcp server插件
 	-- require("lazy.plugins.mcphub"),
