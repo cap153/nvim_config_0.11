@@ -207,7 +207,7 @@ mapcmd("<LEADER>sc", "set spell!")
 -- 运行代码
 vim.cmd([[
  au filetype dart noremap r :wall<cr>:Telescope flutter commands<cr>
- au filetype python noremap r :wall<cr>:set splitbelow<cr>:sp<cr>:term python %<cr>
+ au filetype python noremap r :wall<cr>:set splitbelow<cr>:sp<cr>:term uv run %<cr>
  au filetype go noremap r :wall<cr>:set splitbelow<cr>:sp<cr>:term go run %<cr>
  au filetype markdown noremap r :MarkdownPreview<cr>
  au filetype rust noremap r :wall<cr>:set splitbelow<cr>:sp<cr>:term cargo run<cr>

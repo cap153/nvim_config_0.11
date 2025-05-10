@@ -29,7 +29,7 @@ require("lazy").setup({
 	require("lazy.plugins.fittencode"),
 	-- 免费大语言模型 (LLM) 支持
 	require("lazy.plugins.llm"),
-	-- command line浮动弹窗
+	-- command line浮动弹窗noice
 	require("lazy.plugins.cmdline"),
 	-- 代码函数名称浏览时固定，`[c`可以跳转到上下文
 	require("lazy.plugins.stickyScroll"),
@@ -50,7 +50,7 @@ require("lazy").setup({
 	-- treesitter语法高亮
 	require("lazy.plugins.treesitter"),
 	-- rainbow彩虹括号
-	require("lazy.plugins.rainbow"),
+	require("lazy.plugins.rainbowbracket"),
 	-- tabular，使用:Tab /=来格式化等号之类,特使符号要转义如:Tabularize /\/
 	require("lazy.plugins.tabular"),
 	-- surround,各种对字符的包裹{} [] ''
@@ -59,12 +59,14 @@ require("lazy").setup({
 	require("lazy.plugins.pairs"),
 	-- flutter
 	require("lazy.plugins.flutter"),
-	-- 底部状态栏+主题 themes
+	-- 主题 themes
 	require("lazy.plugins.themes"),
+	-- 顶部标签页，文件缓冲区
+	require("lazy.plugins.bufferline"),
+	-- 底部状态栏
+	require("lazy.plugins.bottombar"),
 	-- 注释插件
 	require("lazy.plugins.comment"),
-	-- 文件缓冲标签栏
-	require("lazy.plugins.bufferline"),
 	-- explorer tree 文件列表，现在已使用yazi
 	require("lazy.plugins.filemanager"),
 	-- crtl+g快捷键在neovim中启动lazygit
@@ -77,18 +79,17 @@ require("lazy").setup({
 	require("lazy.plugins.color"),
 	-- sudo write
 	require("lazy.plugins.suda"),
-	-- jump使用flash.nvim插件实现，f单个字母时按f下一处，建议先esc退出再可视模式此时才可以继续使用f，斜杠粘贴整个单词查找的时候不好用
+	-- jump使用flash.nvim插件实现
 	require("lazy.plugins.jump"),
 	-- 多光标
 	require("lazy.plugins.multicursor"),
 	-- which-key使用多个字母快捷键停留时会提示
 	require("lazy.plugins.whichkey"),
-	-- 用于改进在 Neovim 中查看 Markdown 文件的插件
-	-- require("lazy.plugins.render-markdown"),
 	-- 顶部的winbar,可以鼠标点击
-	-- require("lazy.plugins.winbar"),
-	-- cw推荐的indent缩进线hlchunk，可以根据线条的款式来分辨缩进
-	-- require("lazy.plugins.indent"),
+	require("lazy.plugins.winbar"),
+	-- 用于改进在 Neovim 中查看 Markdown 文件的插件
+	require("lazy.plugins.markview"),
+	-- require("lazy.plugins.render-markdown"),
 	-- mcp server插件
 	-- require("lazy.plugins.mcphub"),
 	-- 像cursor一样使用neovim

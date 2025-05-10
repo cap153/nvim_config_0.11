@@ -9,7 +9,7 @@ vim.opt.conceallevel = 2
 -- 使用相对数
 vim.o.relativenumber = true
 -- 高亮当前行
-vim.o.cursorline = true
+vim.o.cursorline = false
 -- 一行不能完全显示时自动换行
 vim.o.wrap = true
 -- 在最后一行显示一些内容

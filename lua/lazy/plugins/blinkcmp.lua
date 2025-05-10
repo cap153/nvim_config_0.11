@@ -15,6 +15,8 @@ return {
 				["<CR>"] = { "select_and_accept", "fallback" },
 			},
 			completion = {
+				-- 不预选第一个项目，选中后自动插入该项目文本
+				list = { selection = { preselect = false, auto_insert = true } },
 				-- 自动显示补全窗口，仅在输入命令时显示菜单，而搜索或使用其他输入菜单时则不显示
 				menu = {
 					auto_show = function(ctx)
