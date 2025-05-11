@@ -2,8 +2,7 @@ return {
 	"saghen/blink.cmp",
 	dependencies = {
 		"rafamadriz/friendly-snippets",
-		"Kaiser-Yang/blink-cmp-avante",
-		"mikavilpas/blink-ripgrep.nvim",
+		-- "Kaiser-Yang/blincmp-avante",
 	},
 	version = "*",
 	---@module 'blink.cmp'
@@ -72,26 +71,15 @@ return {
 		-- 已定义启用的提供程序的默认列表，以便您可以扩展它
 		sources = {
 			default = {
-				"avante",
 				"buffer",
-				"ripgrep",
 				"lsp",
 				"path",
 				"snippets",
+				-- "avante",
 			},
 			providers = {
 				-- score_offset设置优先级数字越大优先级越高
-				avante = {
-					module = "blink-cmp-avante",
-					name = "Avante",
-					score_offset = 6,
-				},
 				buffer = { score_offset = 5 },
-				ripgrep = {
-					module = "blink-ripgrep",
-					name = "Ripgrep",
-					score_offset = 4,
-				},
 				path = { score_offset = 3 },
 				lsp = { score_offset = 2 },
 				snippets = { score_offset = 1 },
@@ -104,6 +92,11 @@ return {
 						return 0
 					end,
 				},
+				-- avante = {
+				-- 	module = "blink-cmp-avante",
+				-- 	name = "Avante",
+				-- 	score_offset = 6,
+				-- },
 			},
 		},
 	},

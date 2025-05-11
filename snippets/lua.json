@@ -12,7 +12,9 @@
 		"prefix": "return",
 		"body": [
 			"return {",
-			"\t${1}",
+			"\t\"${1}\",",
+			"\tdependencies = {",
+			"\t},",
 			"\tconfig = function()",
 			"\t\t${2}",
 			"\tend",

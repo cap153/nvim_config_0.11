@@ -13,7 +13,6 @@ return {
 	},
 	config = function(_, opts)
 		-- 初始化 mason.nvim 和 conform.nvim
-		require("mason").setup()
 		require("conform").setup(opts)
 
 		-- 辅助函数：从指定文件类型的配置中提取所有工具名称（去重）
