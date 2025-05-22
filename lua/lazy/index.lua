@@ -93,5 +93,5 @@ require("lazy").setup({
 	-- mcp server插件
 	-- require("lazy.plugins.mcphub"),
 	-- 像cursor一样使用neovim
-	-- require("lazy.plugins.avante"),
+	require("lazy.plugins.avante"),
 })

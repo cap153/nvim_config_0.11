@@ -42,6 +42,8 @@ vim.o.termguicolors = true
 vim.opt.updatetime = 200
 -- 指定keyword
 vim.opt.iskeyword = "_,49-57,A-Z,a-z"
+-- 让全局默认边框变成rounded或single
+vim.o.winborder = 'rounded'
 
 -- 设置编码格式
 vim.o.fileencodings = 'utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1'

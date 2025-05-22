@@ -2,7 +2,7 @@ return {
 	"saghen/blink.cmp",
 	dependencies = {
 		"rafamadriz/friendly-snippets",
-		-- "Kaiser-Yang/blincmp-avante",
+		"Kaiser-Yang/blink-cmp-avante",
 	},
 	version = "*",
 	---@module 'blink.cmp'
@@ -75,7 +75,7 @@ return {
 				"lsp",
 				"path",
 				"snippets",
-				-- "avante",
+				"avante",
 			},
 			providers = {
 				-- score_offset设置优先级数字越大优先级越高
@@ -92,11 +92,13 @@ return {
 						return 0
 					end,
 				},
-				-- avante = {
-				-- 	module = "blink-cmp-avante",
-				-- 	name = "Avante",
-				-- 	score_offset = 6,
-				-- },
+				avante = {
+					module = "blink-cmp-avante",
+					name = "Avante",
+					opts = {
+						-- options for blink-cmp-avante
+					},
+				},
 			},
 		},
 	},

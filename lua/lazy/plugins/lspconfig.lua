@@ -17,8 +17,7 @@ return {
 				-- "gopls",
 			},
 			automatic_enable = {
-				exclude = {
-				},
+				exclude = {},
 			},
 		})
 
