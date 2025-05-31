@@ -18,7 +18,7 @@ return {
 			lualine_b = { "branch", "diff", "diagnostics" },
 			lualine_c = { "lsp_status" },
 			lualine_x = {},
-			lualine_y = { "encoding", "fileformat", "progress" },
+			lualine_y = { "encoding", "progress" },
 			lualine_z = { "location" },
 		},
 	},

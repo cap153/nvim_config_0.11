@@ -30,7 +30,7 @@ mapcmd("<leader><cr>", "nohlsearch")
 
 -- 保存和退出
 mapkey("", "S", ":wall<cr>")
-mapkey("", "Q", ":q<cr>")
+mapkey("", "Q", ":qall<cr>")
 
 -- 撤销与反撤销
 mapkey("", "l", "u")
@@ -209,7 +209,7 @@ vim.cmd([[
  au filetype dart noremap r :wall<cr>:Telescope flutter commands<cr>
  au filetype python noremap r :wall<cr>:set splitbelow<cr>:sp<cr>:term uv run %<cr>
  au filetype go noremap r :wall<cr>:set splitbelow<cr>:sp<cr>:term go run %<cr>
- au filetype markdown noremap r :MarkdownPreview<cr>
+ au filetype markdown noremap r :PeekClose<cr>:PeekOpen<cr>
  au filetype rust noremap r :wall<cr>:set splitbelow<cr>:sp<cr>:term cargo run<cr>
 ]])
 

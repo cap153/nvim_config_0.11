@@ -1,9 +1,20 @@
 -- ===
 -- === explorer tree 文件列表
 -- ===
+
+-- 判断当前环境是否是vscode映射不同命令打开yazi
+if vim.g.vscode then
+	-- VSCode Neovim environment
+	local vscode = require("vscode")
+	vim.keymap.set("n", "tt", function()
+		vscode.action("yazi-vscode.toggle")
+	end, { noremap = true, silent = true, desc = "Toggle Yazi (VSCode)" })
+end
+
 ---@type LazySpec
 return {
 	"mikavilpas/yazi.nvim",
+	enabled = not vim.g.vscode,
 	event = "VeryLazy",
 	dependencies = {
 		-- check the installation instructions at
@@ -34,17 +45,3 @@ return {
 		vim.g.loaded_netrwPlugin = 1
 	end,
 }
--- return {
--- 	"rolv-apneseth/tfm.nvim",
--- 	event = "VeryLazy",
--- 	opts = {
--- 		enable_cmds = true,
--- 	},
--- 	keys = {
--- 		{
--- 			"tt",
--- 			":Tfm<CR>",
--- 			desc = "TFM - new tab",
--- 		},
--- 	},
--- }

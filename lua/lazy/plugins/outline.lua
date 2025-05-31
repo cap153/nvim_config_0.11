@@ -8,6 +8,7 @@ map:cmd('<space>v', 'SymbolsOutline')
 
 return {
 	'simrat39/symbols-outline.nvim',
+  enabled = not vim.g.vscode,
 	config = function()
 		require("symbols-outline").setup {
 			width = 20,

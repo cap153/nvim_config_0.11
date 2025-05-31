@@ -17,12 +17,12 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 -- 启动Lazy插件管理快捷键
 vim.keymap.set("n", "<leader>l", ":Lazy<CR>", { noremap = true })
 require("lazy").setup({
-	-- 用Neovim打开kitty滚动缓冲
-	require("lazy.plugins.kittyscroll"),
 	-- 自动补全插件
 	require("lazy.plugins.blinkcmp"),
 	-- lsp配置，全局的错误和警告提示，修复建议，重命名变量，格式化代码等等
 	require("lazy.plugins.lspconfig"),
+	-- neovim中调试代码debug dap
+	require("lazy.plugins.dap"),
 	-- 格式化代码
 	require("lazy.plugins.formatter"),
 	-- ai编程助手Fitten Code
@@ -31,12 +31,14 @@ require("lazy").setup({
 	require("lazy.plugins.llm"),
 	-- command line浮动弹窗noice
 	require("lazy.plugins.cmdline"),
-	-- 代码函数名称浏览时固定，`[c`可以跳转到上下文
+	-- 代码函数名称浏览时固定
 	require("lazy.plugins.stickyScroll"),
 	-- fold折叠，根据treesitter来折叠，可以兼容我设置的<leader>o快捷键
 	require("lazy.plugins.fold"),
 	-- 缩进彩虹和高亮
 	require("lazy.plugins.indentrainbow"),
+	-- rainbow彩虹括号
+	require("lazy.plugins.rainbowbracket"),
 	-- 粘贴图片
 	require("lazy.plugins.imgclip"),
 	-- 图片预览
@@ -49,8 +51,6 @@ require("lazy").setup({
 	require("lazy.plugins.outline"),
 	-- treesitter语法高亮
 	require("lazy.plugins.treesitter"),
-	-- rainbow彩虹括号
-	require("lazy.plugins.rainbowbracket"),
 	-- tabular，使用:Tab /=来格式化等号之类,特使符号要转义如:Tabularize /\/
 	require("lazy.plugins.tabular"),
 	-- surround,各种对字符的包裹{} [] ''
@@ -85,13 +85,17 @@ require("lazy").setup({
 	require("lazy.plugins.multicursor"),
 	-- which-key使用多个字母快捷键停留时会提示
 	require("lazy.plugins.whichkey"),
-	-- 顶部的winbar,可以鼠标点击
+	-- 顶部的winbar,可以鼠标点击,<scace>;选择，`[c`可以跳转到上下文开头,`]c`选择同级上下文
 	require("lazy.plugins.winbar"),
+	-- 用Neovim打开kitty滚动缓冲
+	require("lazy.plugins.kittyscroll"),
+	-- 像cursor一样使用neovim
+	require("lazy.plugins.avante"),
+	-- mcp server插件
+	-- require("lazy.plugins.mcphub"),
 	-- 用于改进在 Neovim 中查看 Markdown 文件的插件
 	-- require("lazy.plugins.markview"),
 	-- require("lazy.plugins.render-markdown"),
-	-- mcp server插件
-	-- require("lazy.plugins.mcphub"),
-	-- 像cursor一样使用neovim
-	require("lazy.plugins.avante"),
+	-- 在浏览器中查看markdown preview
+	require("lazy.plugins.markdownpreview"),
 })
