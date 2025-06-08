@@ -91,11 +91,11 @@ require("lazy").setup({
 	require("lazy.plugins.kittyscroll"),
 	-- 像cursor一样使用neovim
 	require("lazy.plugins.avante"),
+	-- 在浏览器中查看markdown preview
+	require("lazy.plugins.markdownpreview"),
 	-- mcp server插件
 	-- require("lazy.plugins.mcphub"),
 	-- 用于改进在 Neovim 中查看 Markdown 文件的插件
 	-- require("lazy.plugins.markview"),
 	-- require("lazy.plugins.render-markdown"),
-	-- 在浏览器中查看markdown preview
-	require("lazy.plugins.markdownpreview"),
 })

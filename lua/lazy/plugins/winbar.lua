@@ -2,9 +2,9 @@ return {
 	"Bekaboo/dropbar.nvim",
 	config = function()
 		local api = require("dropbar.api")
-		vim.keymap.set('n', '<Leader>;', api.pick)
-		vim.keymap.set('n', '[c', api.goto_context_start)
-		vim.keymap.set('n', ']c', api.select_next_context)
+		vim.keymap.set("n", "<Leader>;", api.pick)
+		vim.keymap.set("n", "[c", api.goto_context_start)
+		vim.keymap.set("n", "]c", api.select_next_context)
 
 		local confirm = function()
 			local menu = api.get_current_dropbar_menu()
@@ -18,12 +18,12 @@ return {
 			end
 		end
 
-		local quit_curr = function()
-			local menu = api.get_current_dropbar_menu()
-			if menu then
-				menu:close()
-			end
-		end
+		-- local quit_curr = function()
+		-- 	local menu = api.get_current_dropbar_menu()
+		-- 	if menu then
+		-- 		menu:close()
+		-- 	end
+		-- end
 
 		require("dropbar").setup({
 			menu = {
@@ -32,7 +32,7 @@ return {
 				quick_navigation = true,
 				---@type table<string, string|function|table<string, string|function>>
 				keymaps = {
-					['<LeftMouse>'] = function()
+					["<LeftMouse>"] = function()
 						local menu = api.get_current_dropbar_menu()
 						if not menu then
 							return
@@ -48,14 +48,15 @@ return {
 							end
 							return
 						end
-						menu:click_at({ mouse.line, mouse.column }, nil, 1, 'l')
+						menu:click_at({ mouse.line, mouse.column }, nil, 1, "l")
 					end,
-					['<CR>'] = confirm,
-					['i'] = confirm,
-					['<esc>'] = quit_curr,
-					['q'] = quit_curr,
-					['n'] = quit_curr,
-					['<MouseMove>'] = function()
+					["<CR>"] = confirm,
+					["i"] = confirm,
+					["<esc>"] = "<C-w>q",
+					-- ['q'] = quit_curr,
+					["q"] = "<C-w>q",
+					["n"] = "<C-w>q",
+					["<MouseMove>"] = function()
 						local menu = api.get_current_dropbar_menu()
 						if not menu then
 							return
@@ -69,5 +70,5 @@ return {
 				},
 			},
 		})
-	end
+	end,
 }

@@ -6,3 +6,5 @@
 ```bash
 paru -S python-neovim python-pip npm
 ```
+
+![效果](效果.jpg) 
