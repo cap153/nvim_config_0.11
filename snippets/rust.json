@@ -1,0 +1,73 @@
+{
+	"main": {
+		"prefix": "main",
+		"body": [
+			"fn main() {",
+			"\t${0}",
+			"}"
+		],
+		"description": "custom main"
+	},
+	"fn": {
+		"prefix": "fn",
+		"body": [
+			"fn ${1}(${2}) ${3}{",
+			"\t${4}",
+			"}"
+		],
+		"description": "custom function"
+	},
+	"let":{
+		"prefix": "let",
+		"body": [
+			"let ${1} = ${2};"
+		],
+		"description": "custom let"
+	},
+	"letmut":{
+		"prefix": "let mut",
+		"body": [
+			"let mut ${1} = ${2};"
+		],
+		"description": "custom let mut"
+	},
+	"pri":{
+		"prefix": "pri",
+		"body": [
+			"println!(\"${1}\"${2});"
+		],
+		"description": "custom println"
+	},
+	"println":{
+		"prefix": "println",
+		"body": [
+			"println!(\"${1}\"${2});"
+		],
+		"description": "custom println"
+	},
+	"print":{
+		"prefix": "print",
+		"body": [
+			"print!(\"${1}\"${2});"
+		],
+		"description": "custom print"
+	},
+	"if": {
+		"prefix": "if",
+		"body": [
+			"if ${1} {",
+			"\t${2}",
+			"}"
+		],
+		"description": "custom if"
+	},
+	"for": {
+		"prefix": "for",
+		"body": [
+			"for ${1} in ${2} {",
+			"\t${3}",
+			"}"
+		],
+		"description": "custom for"
+	}
+}

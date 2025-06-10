@@ -32,7 +32,7 @@
 	"require_plugins": {
 		"prefix": "require_plugins",
 		"body": [
-			"require(\"lazy.plugins.${0}\")"
+			"require(\"lazy.plugins.${0}\"),"
 		],
 		"description": "Require plugins for Neovim"
 	}
