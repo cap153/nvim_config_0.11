@@ -17,6 +17,8 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 -- 启动Lazy插件管理快捷键
 vim.keymap.set("n", "<leader>l", ":Lazy<CR>", { noremap = true })
 require("lazy").setup({
+	-- 运行代码
+	require("lazy.plugins.coderunner"),
 	-- 自动补全插件
 	require("lazy.plugins.blinkcmp"),
 	-- lsp配置，全局的错误和警告提示，修复建议，重命名变量，格式化代码等等

@@ -46,10 +46,10 @@ return {
 		completion = {
 			-- 示例：使用'prefix'对于'foo_|_bar'单词将匹配'foo_'(光标前面的部分),使用'full'将匹配'foo__bar'(整个单词)
 			keyword = { range = "full" },
-			-- 选择补全项目时显示文档(0.5秒延迟)
-			documentation = { auto_show = true, auto_show_delay_ms = 500 },
+			-- 选择补全项目时显示文档(0秒延迟)
+			documentation = { auto_show = true, auto_show_delay_ms = 0 },
 			-- 不预选第一个项目，选中后自动插入该项目文本
-			list = { selection = { preselect = false, auto_insert = true } },
+			list = { selection = { preselect = false, auto_insert = false } },
 			-- 针对菜单的外观配置
 			-- menu = {
 			-- 	min_width = 15,
