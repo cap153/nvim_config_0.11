@@ -221,6 +221,7 @@ mapcmd("<LEADER>sc", "set spell!")
 --  au filetype rust noremap r :wall<cr>:set splitbelow<cr>:sp<cr>:term cargo run<cr>
 -- ]])
 
+
 -- ===
 -- === map function external environment
 -- ===
