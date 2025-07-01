@@ -25,7 +25,7 @@
 		"description": "custom let"
 	},
 	"letmut":{
-		"prefix": "let mut",
+		"prefix": "letm",
 		"body": [
 			"let mut ${1} = ${2};"
 		],

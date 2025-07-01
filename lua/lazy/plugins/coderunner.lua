@@ -46,7 +46,7 @@ return {
 			filetype = {
 				python = "uv run $fileName",
 				rust = {
-					"cargo run",
+					"cargo run --release",
 					-- "cd $dir &&",
 					-- "rustc $fileName &&",
 					-- "$dir/$fileNameWithoutExt",

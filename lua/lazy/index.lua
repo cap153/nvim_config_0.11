@@ -73,6 +73,8 @@ require("lazy").setup({
 	require("lazy.plugins.filemanager"),
 	-- crtl+g快捷键在neovim中启动lazygit
 	require("lazy.plugins.lazygit"),
+	-- fzf/skim模糊查找
+	require("lazy.plugins.fzf"),
 	-- telescope模糊查找
 	require("lazy.plugins.telescope"),
 	-- 代码雨插件

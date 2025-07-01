@@ -4,28 +4,28 @@ return {
 	commit = "7dc5560",
 	-- version = false, -- Never set this value to "*"! Never!
 	opts = {
-		-- behaviour = {
-		-- 	enable_cursor_planning_mode = true, -- enable cursor planning mode!
-		-- },
-		-- provider = "openrouter",
-		-- vendors = {
-		-- 	openrouter = {
-		-- 		__inherited_from = "openai",
-		-- 		disable_tools = true,
-		-- 		endpoint = "https://openrouter.ai/api/v1",
-		-- 		api_key_name = "OPENROUTER_API_KEY",
-		-- 		model = "deepseek/deepseek-chat-v3-0324:free",
-		-- 	},
-		-- },
-		provider = "deepseek",
+		behaviour = {
+			enable_cursor_planning_mode = true, -- enable cursor planning mode!
+		},
+		provider = "openrouter",
 		vendors = {
-			deepseek = {
+			openrouter = {
 				__inherited_from = "openai",
-				api_key_name = "DEEPSEEK_API_KEY",
-				endpoint = "https://api.deepseek.com",
-				model = "deepseek-chat",
+				disable_tools = true,
+				endpoint = "https://openrouter.ai/api/v1",
+				api_key_name = "OPENROUTER_API_KEY",
+				model = "deepseek/deepseek-chat-v3-0324:free",
 			},
 		},
+		-- provider = "deepseek",
+		-- vendors = {
+		-- 	deepseek = {
+		-- 		__inherited_from = "openai",
+		-- 		api_key_name = "DEEPSEEK_API_KEY",
+		-- 		endpoint = "https://api.deepseek.com",
+		-- 		model = "deepseek-chat",
+		-- 	},
+		-- },
 		-- The system_prompt type supports both a string and a function that returns a string. Using a function here allows dynamically updating the prompt with mcphub
 		-- system_prompt = function()
 		-- 	local hub = require("mcphub").get_hub_instance()
@@ -50,7 +50,6 @@ return {
 		--- The below dependencies are optional,
 		"echasnovski/mini.pick", -- for file_selector provider mini.pick
 		"nvim-telescope/telescope.nvim", -- for file_selector provider telescope
-		"ibhagwan/fzf-lua", -- for file_selector provider fzf
 		"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
 		"zbirenbaum/copilot.lua", -- for providers='copilot'
 		{

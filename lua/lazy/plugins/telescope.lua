@@ -7,9 +7,9 @@ return {
 	config = function()
 		local builtin = require('telescope.builtin')
 		-- ctrl+t打开文件查找
-		vim.keymap.set('n', '<c-t>', builtin.find_files, {})
+		-- vim.keymap.set('n', '<c-t>', builtin.find_files, {})
 		-- ctrl+f打开字符串查找
-		vim.keymap.set('n', '<c-f>', '<cmd>lua require("telescope.builtin").grep_string({ search = vim.fn.input("Grep For > "), only_sort_text = true, })<cr>', { noremap = true })
+		-- vim.keymap.set('n', '<c-f>', '<cmd>lua require("telescope.builtin").grep_string({ search = vim.fn.input("Grep For > "), only_sort_text = true, })<cr>', { noremap = true })
 		-- 下面的配置从cw的配置粘贴过来的，删除一部分看不懂的
 		local ts = require('telescope')
 		ts.setup({
