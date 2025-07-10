@@ -53,7 +53,7 @@ require("lazy").setup({
 	require("lazy.plugins.outline"),
 	-- treesitter语法高亮
 	require("lazy.plugins.treesitter"),
-	-- tabular，使用:Tab /=来格式化等号之类,特使符号要转义如:Tabularize /\/
+	-- tabular，使用:Tab /=来格式化等号之类,特殊符号要转义如:Tabularize /\/
 	require("lazy.plugins.tabular"),
 	-- surround,各种对字符的包裹{} [] ''
 	require("lazy.plugins.surround"),
@@ -93,10 +93,12 @@ require("lazy").setup({
 	require("lazy.plugins.winbar"),
 	-- 用Neovim打开kitty滚动缓冲
 	require("lazy.plugins.kittyscroll"),
-	-- 像cursor一样使用neovim
-	require("lazy.plugins.avante"),
 	-- 在浏览器中查看markdown preview
 	require("lazy.plugins.markdownpreview"),
+	-- 在neovim中使用gemini-cli
+	require("lazy.plugins.gemini"),
+	-- 像cursor一样使用neovim
+	-- require("lazy.plugins.avante"),
 	-- mcp server插件
 	-- require("lazy.plugins.mcphub"),
 	-- 用于改进在 Neovim 中查看 Markdown 文件的插件

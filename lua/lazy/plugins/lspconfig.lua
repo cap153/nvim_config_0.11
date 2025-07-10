@@ -9,13 +9,12 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"rust_analyzer",
+					"marksman",
+					"pylsp",
 					-- "gopls",
 				},
 				automatic_enable = {
-					exclude = {
-						"marksman",
-						"pylsp",
-					},
+					exclude = {},
 				},
 			},
 		},
