@@ -4,8 +4,6 @@
 
 -- 开启左侧数字
 vim.o.number = true
--- 始终隐藏字符（不依赖语法高亮）,在 Markdown 文件中，粗体、斜体等标记字符可能会被隐藏
-vim.opt.conceallevel = 2
 -- 使用相对数
 vim.o.relativenumber = true
 -- 高亮当前行
@@ -44,6 +42,8 @@ vim.opt.updatetime = 200
 vim.opt.iskeyword = "_,49-57,A-Z,a-z"
 -- 让全局默认边框变成rounded或single
 vim.o.winborder = 'rounded'
+-- 始终隐藏字符（不依赖语法高亮）,在 Markdown 文件中，粗体、斜体等标记字符可能会被隐藏
+-- vim.opt.conceallevel = 2
 
 -- 设置编码格式
 vim.o.fileencodings = 'utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1'
