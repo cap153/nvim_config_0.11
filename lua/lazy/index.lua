@@ -17,6 +17,8 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 -- 启动Lazy插件管理快捷键
 vim.keymap.set("n", "<leader>l", ":Lazy<CR>", { noremap = true })
 require("lazy").setup({
+	-- Neovim的任务运行器和作业管理插件
+	require("lazy.plugins.overseer"),
 	-- 运行代码
 	require("lazy.plugins.coderunner"),
 	-- 自动补全插件
@@ -51,8 +53,10 @@ require("lazy").setup({
 	require("lazy.plugins.gitstatus"),
 	-- outline大纲
 	require("lazy.plugins.outline"),
-	-- treesitter语法高亮
+	-- treesitter语法高亮，nvim-treesitter-refactor高亮当前单词的定义和其他引用、高亮当前作用域
 	require("lazy.plugins.treesitter"),
+	-- illuminate高亮当前单词的定义和其他引用，g=和g-在它们之间跳转
+	require("lazy.plugins.illuminate"),
 	-- tabular，使用:Tab /=来格式化等号之类,特殊符号要转义如:Tabularize /\/
 	require("lazy.plugins.tabular"),
 	-- surround,各种对字符的包裹{} [] ''
@@ -96,7 +100,7 @@ require("lazy").setup({
 	-- 在浏览器中查看markdown preview
 	require("lazy.plugins.markdownpreview"),
 	-- 在neovim中使用gemini-cli
-	require("lazy.plugins.gemini"),
+	-- require("lazy.plugins.gemini"),
 	-- 像cursor一样使用neovim
 	-- require("lazy.plugins.avante"),
 	-- mcp server插件
