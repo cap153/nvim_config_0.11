@@ -5,10 +5,10 @@ return {
 	},
 	opts = {
 		formatters_by_ft = {
-			lua = { "stylua" },
 			python = { "isort", "black" },
 			rust = { "rust-analyzer", lsp_format = "fallback" },
 			toml = { "templ" },
+			html = { "djlint" },
 		},
 	},
 	config = function(_, opts)

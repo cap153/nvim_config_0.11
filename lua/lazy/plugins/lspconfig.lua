@@ -11,6 +11,9 @@ return {
 					"rust_analyzer",
 					"marksman",
 					"pylsp",
+					"ts_ls",
+					"cssls",
+					"html",
 					-- "gopls",
 				},
 				automatic_enable = {
