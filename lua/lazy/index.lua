@@ -65,10 +65,12 @@ require("lazy").setup({
 	require("lazy.plugins.pairs"),
 	-- flutter
 	require("lazy.plugins.flutter"),
+	-- 透明
+	require("lazy.plugins.transprent"),
 	-- 主题 themes
 	require("lazy.plugins.themes"),
 	-- 顶部标签页，文件缓冲区
-	require("lazy.plugins.bufferline"),
+	require("lazy.plugins.topbar"),
 	-- 底部状态栏
 	require("lazy.plugins.bottombar"),
 	-- 注释插件
