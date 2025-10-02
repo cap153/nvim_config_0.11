@@ -71,11 +71,13 @@ mapkey("", "u", "k")
 mapkey("", "e", "j")
 mapkey("", "i", "l")
 
--- faster navigation
+-- 更快的导航
 mapkey("", "U", "5k")
 mapkey("", "E", "5j")
 mapkey("", "N", "0")
 mapkey("", "I", "$")
+-- 向下滚动半页，<C-u>默认向上滚动半页
+mapkey("n","<C-e>","<C-d>")
 
 -- 更快的行导航
 mapkey("", "W", "5W")
