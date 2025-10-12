@@ -1,14 +1,37 @@
 return {
-	"kraftwerk28/gtranslate.nvim",
-	dependencies = "nvim-lua/plenary.nvim",
+	"uga-rosa/translate.nvim",
 	config = function()
-		vim.api.nvim_set_keymap('n', 'tr', "viw:'<,'>Translate<CR>", { noremap = true, silent = true })
-		vim.api.nvim_set_keymap('v', 'tr', ":'<,'>Translate<CR>", { noremap = true, silent = true })
-		require("gtranslate").setup {
-			default_to_language = "Chinese_Simplified",
-		}
+		vim.api.nvim_set_keymap('n', 'tr', "viw:Translate ZH -output=replace<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap('v', 'tr', ":'<,'>Translate ZH -output=replace<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap('n', 'ts', "viw:Translate ZH<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap('v', 'ts', ":'<,'>Translate ZH<CR>",
+			{ noremap = true, silent = true })
+		require("translate").setup({
+			default = {
+				command = "translate_shell",
+			},
+			preset = {
+				command = {
+					translate_shell = {
+						args = { "-e", "bing" }
+					}
+				}
+			}
+		})
 	end
 }
+
+-- return {
+-- 	"kraftwerk28/gtranslate.nvim",
+-- 	dependencies = "nvim-lua/plenary.nvim",
+-- 	config = function()
+-- 		vim.api.nvim_set_keymap('n', 'tr', "viw:'<,'>Translate<CR>", { noremap = true, silent = true })
+-- 		vim.api.nvim_set_keymap('v', 'tr', ":'<,'>Translate<CR>", { noremap = true, silent = true })
+-- 		require("gtranslate").setup {
+-- 			default_to_language = "Chinese_Simplified",
+-- 		}
+-- 	end
+-- }
 
 -- return{
 -- 	"JuanZoran/Trans.nvim",
