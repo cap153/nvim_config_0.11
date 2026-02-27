@@ -23,7 +23,6 @@ return {
 				-- you can add other fields for setting up lsp server in this table
 			})
 		end
-		require("ufo").setup()
 		-- Option 3: treesitter as a main provider instead
 		-- Only depend on `nvim-treesitter/queries/filetype/folds.scm`,
 		-- performance and stability are better than `foldmethod=nvim_treesitter#foldexpr()`
