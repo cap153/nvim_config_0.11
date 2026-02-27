@@ -1,13 +1,26 @@
 -- ===
 -- === 光标移动neovide
 -- ===
+vim.keymap.set('n', '<sC-c>', '"+y', { noremap = true })
+vim.keymap.set('v', '<sC-c>', '"+y', { noremap = true })
 if vim.g.neovide then
+	-- https://github.com/neovide/neovide/issues/1282
+	vim.api.nvim_set_keymap('n', '<sC-v>', '"+p', { noremap = true })
+	vim.api.nvim_set_keymap('v', '<sC-v>', '"+P', { noremap = true })
+	vim.api.nvim_set_keymap('c', '<sC-v>', '<C-R>+', { noremap = true })
+	vim.api.nvim_set_keymap('i', '<sC-v>', '<C-R>+', { noremap = true })
+	vim.api.nvim_set_keymap('t', '<sC-v>', '<C-\\><C-n>"+Pi', { noremap = true })
 	vim.g.neovide_opacity = 0.75
 	-- vim.o.guifont = "Source Code Pro:h16" -- text below applies for VimScript
 	-- 全屏，可以在i3和sway的配置中设置
 	-- vim.g.neovide_fullscreen = true
 end
-
+-- 判断 CPU 架构
+local arch = jit and jit.arch or ""
+local is_arm = arch:match("arm") or arch:match("aarch64")
+if is_arm then
+	vim.o.guifont = "ComicShannsMono Nerd Font:h24"
+end
 -- ===
 -- === map function
 -- ===
