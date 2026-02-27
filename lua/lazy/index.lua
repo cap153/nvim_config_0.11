@@ -29,10 +29,6 @@ require("lazy").setup({
 	require("lazy.plugins.dap"),
 	-- 格式化代码
 	require("lazy.plugins.formatter"),
-	-- ai编程助手Fitten Code
-	require("lazy.plugins.fittencode"),
-	-- 免费大语言模型 (LLM) 支持
-	require("lazy.plugins.llm"),
 	-- command line浮动弹窗noice
 	require("lazy.plugins.cmdline"),
 	-- 代码函数名称浏览时固定
@@ -79,8 +75,8 @@ require("lazy").setup({
 	require("lazy.plugins.filemanager"),
 	-- crtl+g快捷键在neovim中启动lazygit
 	require("lazy.plugins.lazygit"),
-	-- fzf/skim模糊查找
-	require("lazy.plugins.fzf"),
+	-- fzf/skim/television模糊查找
+	require("lazy.plugins.television"),
 	-- telescope模糊查找
 	require("lazy.plugins.telescope"),
 	-- 代码雨插件
@@ -89,8 +85,6 @@ require("lazy").setup({
 	require("lazy.plugins.color"),
 	-- sudo write
 	require("lazy.plugins.suda"),
-	-- jump使用flash.nvim插件实现
-	require("lazy.plugins.jump"),
 	-- 多光标
 	require("lazy.plugins.multicursor"),
 	-- which-key使用多个字母快捷键停留时会提示
@@ -101,8 +95,12 @@ require("lazy").setup({
 	require("lazy.plugins.kittyscroll"),
 	-- 在浏览器中查看markdown preview
 	require("lazy.plugins.markdownpreview"),
-	-- 在neovim中使用gemini-cli
-	-- require("lazy.plugins.gemini"),
+	-- jump使用flash.nvim插件实现
+	-- require("lazy.plugins.jump"),
+	-- 免费大语言模型 (LLM) 支持
+	-- require("lazy.plugins.llm"),
+	-- ai编程助手Fitten Code
+	-- require("lazy.plugins.fittencode"),
 	-- 像cursor一样使用neovim
 	-- require("lazy.plugins.avante"),
 	-- mcp server插件
