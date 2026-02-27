@@ -3,11 +3,11 @@
 -- ===
 
 local function mapkey(mode, lhs, rhs)
-	vim.api.nvim_set_keymap(mode, lhs, rhs, { noremap = true })
+	vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
 
 local function mapcmd(key, cmd)
-	vim.api.nvim_set_keymap("n", key, ":" .. cmd .. "<cr>", { noremap = true })
+	vim.keymap.set("n", key, ":" .. cmd .. "<cr>", { noremap = true })
 end
 
 local function maplua(key, txt)
@@ -39,18 +39,21 @@ mapkey("", "L", "<c-r>")
 mapkey("", "k", "i")
 mapkey("", "K", "I")
 
--- 以下两个映射默认了
--- make Y to copy till the end of the line
--- mapkey('','Y','y$')
-
--- make D to delete till the end of the line
--- mapkey('','D','d$')
+mapkey('n', '<C-n>', '<C-o>')
 
 -- 折叠
 mapkey("", "<leader>o", "za")
 mapkey("x", "<leader>o", "zf")
 -- 读取保存的折叠
 -- mapkey("", "<leader>a", ":loadview<cr>")
+
+
+-- 以下两个映射默认了
+-- make Y to copy till the end of the line
+-- mapkey('','Y','y$')
+
+-- make D to delete till the end of the line
+-- mapkey('','D','d$')
 
 -- 打开lazygit,已用fm-nvim插件
 -- mapcmd('<c-g>',':tabe<CR>:-tabmove<CR>:term lazygit')
@@ -77,7 +80,7 @@ mapkey("", "E", "5j")
 mapkey("", "N", "0")
 mapkey("", "I", "$")
 -- 向下滚动半页，<C-u>默认向上滚动半页
-mapkey("n","<C-e>","<C-d>")
+mapkey("", "<C-e>", "<C-d>")
 
 -- 更快的行导航
 mapkey("", "W", "5W")
@@ -121,9 +124,9 @@ mapkey("", "<LEADER>q", "<C-w>j:q<CR>")
 -- === Tab management
 -- ===
 
--- tu创建新标签
-mapcmd("tu", "tabe")
--- 在标签之间移动,已用bufferline.nvim替代
+-- tu创建新标签,已用bufferline.nvim替代
+-- mapcmd("tu", "tabe")
+-- 在标签之间移动
 -- mapcmd('tn','-tabnext')
 -- mapcmd('ti','+tabnext')
 
@@ -166,12 +169,12 @@ function search_and_replace()
 	-- 执行替换命令
 	if search_text ~= "" and replace_text ~= "" then
 		local cmd = 'execute "!grep -rl \\"'
-			.. search_text
-			.. '\\" ./ | xargs sed -i \\"s/'
-			.. search_text
-			.. "/"
-			.. replace_text
-			.. '/g\\""'
+				.. search_text
+				.. '\\" ./ | xargs sed -i \\"s/'
+				.. search_text
+				.. "/"
+				.. replace_text
+				.. '/g\\""'
 		vim.cmd(cmd)
 		print("Replaced all occurrences of '" .. search_text .. "' with '" .. replace_text .. "'")
 	else
@@ -197,6 +200,28 @@ function search_and_replace_current_file()
 		print("Search or replace text cannot be empty.")
 	end
 end
+
+-- ===
+-- === 临时“存档”文件当前的版本，并与后续的修改进行 diff 对比
+-- ===
+
+-- 创建 :DiffOrig 自定义命令，这个命令会打开一个垂直分屏，加载当前文件存盘时的版本，并启动 diff 模式
+vim.api.nvim_create_user_command(
+	'DiffOrig',
+	function()
+		-- 在创建新窗口前，先保存当前文件的 filetype
+		local original_filetype = vim.bo.filetype
+		-- 打开一个垂直分屏，并准备好临时缓冲区
+		vim.cmd('vert new | set buftype=nofile')
+		-- 在新的临时缓冲区里，设置我们刚才保存的 filetype，这是确保语法高亮的关键！
+		vim.bo.filetype = original_filetype
+		-- 读取原始文件的磁盘内容，并启动 diff
+		vim.cmd('read ++edit # | 0d_ | diffthis | wincmd p | diffthis')
+	end,
+	{ force = true }
+)
+-- <leader>dd 将会执行 :DiffOrig 命令
+mapcmd('<leader>dd', 'DiffOrig')
 
 -- ===
 -- === Other useful stuff
@@ -236,9 +261,11 @@ local map = {}
 function map:key(mode, lhs, rhs)
 	vim.api.nvim_set_keymap(mode, lhs, rhs, { noremap = true })
 end
+
 function map:cmd(key, cmd)
 	vim.api.nvim_set_keymap("n", key, ":" .. cmd .. "<cr>", { noremap = true })
 end
+
 function map:lua(key, txt)
 	vim.api.nvim_set_keymap("n", key, ":lua " .. txt .. "<cr>", { noremap = true })
 end
