@@ -19,17 +19,26 @@ return {
 					["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
 				},
 			},
-			-- you can enable a preset for easier configuration
+			-- 启用一个预设以简化配置
 			presets = {
-				bottom_search = true, -- use a classic bottom cmdline for search
-				command_palette = true, -- position the cmdline and popupmenu together
+				bottom_search = true,     -- use a classic bottom cmdline for search
+				command_palette = true,   -- position the cmdline and popupmenu together
 				long_message_to_split = true, -- long messages will be sent to a split
-				inc_rename = false, -- enables an input dialog for inc-rename.nvim
-				lsp_doc_border = false, -- add a border to hover docs and signature help
+				inc_rename = false,       -- enables an input dialog for inc-rename.nvim
+				lsp_doc_border = false,   -- add a border to hover docs and signature help
 			},
 			-- 在这里添加或修改 routes 配置
 			routes = {
 				{
+					-- 过滤翻译插件的成功提示
+					filter = {
+						event = "msg_show",
+						find = "Translate success",
+					},
+					opts = { skip = true },
+				},
+				{
+					-- 过滤打开rust文件不影响使用的错误提示
 					filter = {
 						event = "msg_show",
 						kind = "emsg",
