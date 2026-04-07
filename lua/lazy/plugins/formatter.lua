@@ -9,6 +9,7 @@ return {
 			rust = { "rust-analyzer", lsp_format = "fallback" },
 			toml = { "templ" },
 			html = { "djlint" },
+			sh = { "shfmt" },
 		},
 	},
 	config = function(_, opts)
